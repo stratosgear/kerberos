@@ -1,0 +1,7 @@
+.mypy_cache/
+.fseventsd/
+.history/
+.Trash-1000
+.Trashes
+boot_out.txt
+.metadata_never_index

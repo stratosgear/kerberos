@@ -1,0 +1,18 @@
+{
+    "python.languageServer": "Pylance",
+    "python.analysis.diagnosticSeverityOverrides": {
+        "reportMissingModuleSource": "none",
+        "reportShadowedImports": "none"
+    },
+    "circuitpython.board.version": "9.2.8",
+    "python.analysis.extraPaths": [
+        "/home/stratos/.vscode/extensions/wmerkens.vscode-circuitpython-v2-0.3.3/boards/0x2E8A/0x102E",
+        "/home/stratos/.vscode/extensions/wmerkens.vscode-circuitpython-v2-0.3.3/stubs",
+        "/home/stratos/.config/Code/User/globalStorage/wmerkens.vscode-circuitpython-v2/bundle/20250810/adafruit-circuitpython-bundle-py-20250810/lib"
+    ],
+    "circuitpython.board.vid": "0x2E8A",
+    "circuitpython.board.pid": "0x102E",
+    "cSpell.words": [
+        "oled"
+    ]
+}

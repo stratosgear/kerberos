@@ -1,0 +1,256 @@
+{
+    "id": "01K3RXAY3D1ZJ58GH4JX910KTT",
+    "name": "Kerberos",
+    "manufacturer": "Stratosgear Industries",
+    "description": "",
+    "tags": [],
+    "controller": "pi-pico",
+    "keyboardType": "normal",
+    "wiringMethod": "matrix",
+    "diodeDirection": "COL2ROW",
+    "rows": 4,
+    "cols": 6,
+    "pins": 0,
+    "rowPins": [
+        "21",
+        "20",
+        "19",
+        "18"
+    ],
+    "colPins": [
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11"
+    ],
+    "directPins": [],
+    "encoders": [],
+    "layouts": [],
+    "keys": [
+        {
+            "x": 0,
+            "y": 0,
+            "idx": 0
+        },
+        {
+            "x": 1,
+            "y": 0,
+            "idx": 1
+        },
+        {
+            "x": 2,
+            "y": 0,
+            "idx": 2
+        },
+        {
+            "x": 3,
+            "y": 0,
+            "idx": 3
+        },
+        {
+            "x": 4,
+            "y": 0,
+            "idx": 4
+        },
+        {
+            "x": 5,
+            "y": 0,
+            "idx": 5
+        },
+        {
+            "x": 0,
+            "y": 1,
+            "idx": 6
+        },
+        {
+            "x": 1,
+            "y": 1,
+            "idx": 7
+        },
+        {
+            "x": 2,
+            "y": 1,
+            "idx": 8
+        },
+        {
+            "x": 3,
+            "y": 1,
+            "idx": 9
+        },
+        {
+            "x": 4,
+            "y": 1,
+            "idx": 10
+        },
+        {
+            "x": 5,
+            "y": 1,
+            "idx": 11
+        },
+        {
+            "x": 0,
+            "y": 2,
+            "idx": 12
+        },
+        {
+            "x": 1,
+            "y": 2,
+            "idx": 13
+        },
+        {
+            "x": 2,
+            "y": 2,
+            "idx": 14
+        },
+        {
+            "x": 3,
+            "y": 2,
+            "idx": 15
+        },
+        {
+            "x": 4,
+            "y": 2,
+            "idx": 16
+        },
+        {
+            "x": 5,
+            "y": 2,
+            "idx": 17
+        },
+        {
+            "x": 0,
+            "y": 3,
+            "idx": 18
+        },
+        {
+            "x": 1,
+            "y": 3,
+            "idx": 19
+        },
+        {
+            "x": 2,
+            "y": 3,
+            "idx": 20
+        },
+        {
+            "x": 3,
+            "y": 3,
+            "idx": 21
+        },
+        {
+            "x": 4,
+            "y": 3,
+            "idx": 22
+        },
+        {
+            "x": 5,
+            "y": 3,
+            "idx": 23
+        }
+    ],
+    "keymap": [
+        [
+            "KC.J",
+            "KC.L",
+            "KC.U",
+            "KC.Y",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.M",
+            "KC.N",
+            "KC.E",
+            "KC.I",
+            "KC.O",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS"
+        ]
+    ],
+    "encoderKeymap": [
+        []
+    ],
+    "layers": [
+        {
+            "name": ""
+        }
+    ],
+    "split": false,
+    "splitPinA": "",
+    "splitPinB": "",
+    "splitSide": "left",
+    "vbusPin": "VBUS_SENSE",
+    "splitUsePio": true,
+    "splitFlip": false,
+    "splitUartFlip": false,
+    "coordMap": [
+        [
+            "005",
+            "004",
+            "003",
+            "002",
+            "001",
+            "000"
+        ],
+        [
+            "011",
+            "010",
+            "009",
+            "008",
+            "007",
+            "006"
+        ],
+        [
+            "017",
+            "016",
+            "015",
+            "014",
+            "013",
+            "012"
+        ],
+        [
+            "023",
+            "022",
+            "021",
+            "020",
+            "019",
+            "018"
+        ]
+    ],
+    "pinPrefix": "gp",
+    "coordMapSetup": false,
+    "rgbPin": "",
+    "rgbNumLeds": 0,
+    "rgbOptions": {
+        "animationMode": 0,
+        "hueDefault": 0,
+        "satDefault": 255,
+        "valDefault": 255,
+        "animationSpeed": 1,
+        "breatheCenter": 1,
+        "knightEffectLength": 3
+    },
+    "kbFeatures": [
+        "basic",
+        "serial",
+        "oneshot",
+        "tapdance",
+        "holdtap",
+        "mousekeys",
+        "combos",
+        "macros"
+    ],
+    "flashingMode": "automatic",
+    "lastEdited": "2025-08-28 23:03"
+}

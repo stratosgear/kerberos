@@ -1,7 +1,8 @@
-.mypy_cache/
 .fseventsd/
+.mypy_cache/
+.ropeproject/
 .history/
+.metadata_never_index
 .Trash-1000
 .Trashes
 boot_out.txt
-.metadata_never_index

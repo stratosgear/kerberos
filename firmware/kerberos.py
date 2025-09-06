@@ -5,6 +5,9 @@ from kmk.modules.split import Split, SplitType
 from kmk.scanners.keypad import MatrixScanner
 from kmk.scanners.encoder import RotaryioEncoder
 from kmk.modules.holdtap import HoldTap
+from kmk.modules.mouse_keys import MouseKeys
+from kmk.modules.macros import Macros
+from kmk.modules.dynamic_sequences import DynamicSequences
 
 # Based on: https://github.com/moritz-john/kmk-config-klor
 class Kerberos(KMKKeyboard):
@@ -23,9 +26,11 @@ class Kerberos(KMKKeyboard):
         board.GP18,
     )
     diode_orientation = DiodeOrientation.COL2ROW
-    encoder_a = board.GP14
-    encoder_b = board.GP15
+    encoder_a = board.GP16
+    encoder_b = board.GP17
     encoder_divisor = 4
+
+
 
     oled_SDA = board.GP4
     oled_SCL = board.GP5
@@ -33,7 +38,7 @@ class Kerberos(KMKKeyboard):
     uart_rx = board.GP0
     uart_tx = board.GP1
 
-    buzzer_pin = board.GP2
+    buzzer_pin = board.GP22
 
     # Coord mapping:
     # First three row: alphanumeric keys
@@ -53,6 +58,7 @@ class Kerberos(KMKKeyboard):
         self,
         oled=False,
         speaker=False,
+        layers=[]
     ):
         # create and register the scanner(s)
         self.matrix = [
@@ -79,6 +85,10 @@ class Kerberos(KMKKeyboard):
         # holdtap.tap_time = 300
         self.modules.append(holdtap)
 
+        self.modules.append(MouseKeys())
+        self.modules.append(Macros())
+        self.modules.append(DynamicSequences())
+
 
         # Split code:
         split = Split(
@@ -93,65 +103,61 @@ class Kerberos(KMKKeyboard):
         )
         self.modules.append(split)
 
-        self.setup_oled(oled)
+        self.setup_oled(oled, layers)
         self.setup_speaker(speaker)
 
 
     # OLED Code:
-    def setup_oled(self, oled):
+    def setup_oled(self, oled, layers):
         if oled:
-        #     from kmk.extensions.peg_oled_Display import (
-        #         Oled,
-        #         OledDisplayMode,
-        #         OledReactionType,
-        #         OledData,
-        #     )
 
-        #     # --8<-- [start:oled]
-        #     oled_ext = Oled(
-        #         OledData(
-        #             corner_one={
-        #                 0: OledReactionType.STATIC,
-        #                 1: ["Layer"],
-        #             },
-        #             corner_two={
-        #                 0: OledReactionType.LAYER,
-        #                 1: ["0", "1", "2"],
-        #             },
-        #             corner_three={
-        #                 0: OledReactionType.LAYER,
-        #                 1: ["BASE", "RAISE", "LOWER"],
-        #             },
-        #             corner_four={
-        #                 0: OledReactionType.LAYER,
-        #                 1: ["qwerty", "nums", "sym"],
-        #             },
-        #         ),
-        #         toDisplay=OledDisplayMode.TXT,
-        #         flip=True,
-        #         # oHeight=64,
-        #     )
-        #     # --8<-- [end:oled]
-        #     self.extensions.append(oled_ext)
-            pass
+            import busio
+            from kmk.extensions.display import Display, TextEntry
+            from kmk.extensions.display.ssd1306 import SSD1306
+
+            i2c_bus = busio.I2C(scl=self.oled_SCL, sda=self.oled_SDA)
+            display_driver = SSD1306(
+                i2c=i2c_bus,
+                # Optional device_addres argument. Default is 0x3C.
+                # device_address=0x3C,
+            )
+
+            display = Display(
+                display=display_driver,
+                entries=[
+                    TextEntry(text='Kerberos     17:34:01', x=0, y=4),
+                ],
+                # Optional width argument. Default is 128.
+                # width=128,
+                height=64,
+                dim_time=10,
+                dim_target=0.1,
+                off_time=30,
+                brightness=0.8,
+            )
+
+            for i, layer in enumerate(layers):
+                display.entries.append(TextEntry(text=layer, x=0, y=64, y_anchor='B', layer=i))
+            self.modules.append(display)
+            # pass
 
     # Speaker Code:
     def setup_speaker(self, speaker):
         if speaker:
-            # import digitalio
-            # import pwmio
-            # import time
+            import digitalio
+            import pwmio
+            import time
 
-            # buzzer = pwmio.PWMOut(self.buzzer_pin, variable_frequency=True)
-            # OFF = 0
-            # ON = 2**15
-            # buzzer.duty_cycle = ON
-            # buzzer.frequency = 2000
-            # time.sleep(0.2)
-            # buzzer.frequency = 1000
-            # time.sleep(0.2)
-            # buzzer.duty_cycle = OFF
-            pass
+            buzzer = pwmio.PWMOut(self.buzzer_pin, variable_frequency=True)
+            OFF = 0
+            ON = 2**15
+            buzzer.duty_cycle = ON
+            buzzer.frequency = 2000
+            time.sleep(0.2)
+            buzzer.frequency = 1000
+            time.sleep(0.2)
+            buzzer.duty_cycle = OFF
+            # pass
 
     # NOQA
 

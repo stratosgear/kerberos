@@ -79,10 +79,8 @@ keyboard.keymap = [
                                                                             KC.HT(KC.O, KC.MEH, tap_time=200),
                                                                                                                 CUT,
     TD_CURLY,    KC.Z,    KC.X,    KC.C,    KC.D,    KC.V,         KC.K,    KC.H,  KC.COMM,  KC.DOT,  KC.SLSH, PASTE,
-
     # Secondary Thumb
                                          xxxxxxx, xxxxxxx,      xxxxxxx, xxxxxxx,
-
     # Main thumb
     KC.LT(L_NUMBERS, KC.ESC, prefer_hold=True, tap_interrupted=False, tap_time=200),
     KC.LT(L_CURSOR, KC.SPC, prefer_hold=True, tap_interrupted=False, tap_time=200),
@@ -90,8 +88,6 @@ keyboard.keymap = [
                                                 KC.LT(L_SYMBOLS, KC.ENT, prefer_hold=True, tap_interrupted=False, tap_time=200),
                                                 KC.LT(L_DESKTOP, KC.BSPC, prefer_hold=True, tap_interrupted=False, tap_time=200),
                                                 KC.LT(L_FUNCTIONS, KC.DEL, prefer_hold=True, tap_interrupted=False, tap_time=200),
-
-
     # Encoders
     xxxxxxx, # Click
     KC.LGUI(KC.RIGHT), # CW rot
@@ -112,26 +108,28 @@ keyboard.keymap = [
                  KC.HT(KC.S, KC.LALT, tap_time=200),
                  KC.HT(KC.D, KC.LCTL, tap_time=200),
                  KC.HT(KC.F, KC.LSFT, tap_time=200),
-                 KC.HT(KC.G, KC.LGUI, tap_time=200),
-                                                                            KC.HT(KC.H, KC.RGUI, tap_time=200),
+                 KC.HT(KC.G, KC.LGUI, tap_time=200),                        KC.HT(KC.H, KC.RGUI, tap_time=200),
                                                                             KC.HT(KC.J, KC.RSFT, tap_time=200),
                                                                             KC.HT(KC.K, KC.RCTL, tap_time=200),
                                                                             KC.HT(KC.L, KC.RALT, tap_time=200),
                                                                             KC.HT(KC.QUOTE, KC.MEH, tap_time=200),
                                                                                                                 CUT,
     TD_CURLY,    KC.Z,    KC.X,    KC.C,    KC.V,    KC.B,         KC.N,    KC.M,  KC.COMM,  KC.DOT,  KC.SLSH, PASTE,
-
     # Secondary Thumb
                                          xxxxxxx, xxxxxxx,      xxxxxxx, xxxxxxx,
     # Main thumb
-                 _______, _______, _______,                      _______, _______, _______,
-    # Encoders
+    KC.LT(L_NUMBERS, KC.ESC, prefer_hold=True, tap_interrupted=False, tap_time=200),
+    KC.LT(L_CURSOR, KC.SPC, prefer_hold=True, tap_interrupted=False, tap_time=200),
+    KC.LT(L_MOUSEMACROS, KC.TAB, prefer_hold=True, tap_interrupted=False, tap_time=200),
+                                                KC.LT(L_SYMBOLS, KC.ENT, prefer_hold=True, tap_interrupted=False, tap_time=200),
+                                                KC.LT(L_DESKTOP, KC.BSPC, prefer_hold=True, tap_interrupted=False, tap_time=200),
+                                                KC.LT(L_FUNCTIONS, KC.DEL, prefer_hold=True, tap_interrupted=False, tap_time=200),    # Encoders
     xxxxxxx, # Click
     xxxxxxx, # CW rot
     xxxxxxx, # CCW rot
-                                                                            KC.Z, # Click
-                                                                            KC.A, # CW rot
-                                                                            KC.B, # CCW rot
+                                                                            xxxxxxx, # Click
+                                                                            KC.MW_DN, # CW rot: Mouse wheel down
+                                                                            KC.MW_UP, # CCW rot: Mouse Wheel up
      ],
 
     # L_DESKTOP = 2
